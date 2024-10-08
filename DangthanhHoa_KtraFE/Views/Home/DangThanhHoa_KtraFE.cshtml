@@ -1,0 +1,151 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TiKi.vn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/CSS/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    <h2 style="text-align:center;background-color:#80ffc4;height:30px;">FREESHIP đơn từ 45k,Giảm nhiều hơn cùng <b style="color:blue;">FREESHIP</b> EXTRA</h2>
+    <div class="Header">
+        <div style="padding:5px;">
+            <img src="~/Content/img/logo.jpg" width=200 height=140 />
+        </div>
+        <div class="SC">
+            <p>
+                <input class="Search" type="text" placeholder="Search_Product" style="width: 75%;">
+                <button class="SearchButtom">Tìm kiếm</button>            
+            </p>
+            <div>
+                <a href="#">điện gia dụng</a>
+                <a href="#">xe cộ</a>
+                <a href="#">mẹ & bé</a>
+                <a href="#">khỏe dẹp</a>
+                <a href="#">nhà cửa</a>
+                <a href="#">sách</a>
+                <a href="#">thể thao</a>
+            </div>
+        </div>
+        <div>
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
+                <a href="#"><i class="fas fa-user"></i> Tài khoản</a>
+            </div>
+           
+
+        </div>
+    </div>
+    <div class="Content">
+        <div class="href" style="font-size:18px;">
+            <a href="">Trang Chủ</a>
+            <a href="">> Đồ Chơi-Mẹ&Bé</a>
+            <a href="">> Dinh dưỡng cho người lớn</a>
+            <a href="">> Lon sữa Glucerna 800g/lon - Tặng 2 gói dùng thử</a>
+        </div>
+        <div class="container">
+            <!-- Left Section (Product Image and Details) -->
+            <div class="left-section">
+                <div class="product-images">
+                    <!-- Ảnh lớn chính -->
+                    <img id="mainImage" src="~/Content/img/sữa.jpg" alt="Sản phẩm chính" width="300">
+
+                    <!-- Hình ảnh nhỏ (thumbnail) để người dùng bấm vào -->
+                    <div class="thumbnail-container">
+                        <img src="~/Content/img/sữa.jpg" alt="Thumbnail 1" class="thumbnail" onclick="changeImage('image1.jpg')">
+                        <img src="~/Content/img/sữa1.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeImage('image2.jpg')">
+                        <img src="~/Content/img/sữa2.jpg" alt="Thumbnail 3" class="thumbnail" onclick="changeImage('image3.jpg')">
+                    </div>
+                    <h3>xem thêm ưu điểm sản phẩm</h3>
+                </div>
+            </div>
+            <div class="middle-section">
+                <div class="info-details">
+                    <h2>Lon Sữa Glucerna 800g/lon - Tặng 2 gói dùng thử</h2>
+                    <p>
+                        Đánh giá:
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        || đã bán 436
+                    </p>
+                    <p style="font-size: 14px; padding-bottom: 20px;">Make in Spain</p>
+                    <h4 id="productPrice" data-price="1034550">Giá sản phẩm: 1.034.550₫</h4>
+                    <p style="font-size: 18px;">Hương vị<p>
+                    <label for="vanilla-flavor">
+                        <input style="cursor: pointer;font-size: 18px;" type="radio" id="vanilla-flavor" name="flavor" value="vanilla">
+                        Vani
+                    </label>
+                </div>
+                <div class="shipping-info">
+                    <h4>Thông tin vận chuyển</h4>
+                    <p>Giao đến: <a href="#">Q.1, P. Bến Nghé, Hồ Chí Minh</a></p>
+                    <ul>
+                        <li><i class="fas fa-shipping-fast"></i><span class="shipping-option"> Giao siêu tốc:</span> 2h</li>
+                        <li><i class="fas fa-sun"></i><span class="shipping-option"> Giao đúng sáng mai:</span> 8h - 12h (Miễn phí)</li>
+                        <li><span class="shipping-option">Freeship 10k đơn từ 45k , Freeship 25k đơn từ 100k</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Right Section (Price, Quantity) -->
+            <div class="right-section">
+                <h3 style="background-color: #f3f4f6;">Tiki Trading</h3>
+                <p style="font-size:20px;"><img src="~/Content/img/sữa1.jpg" width="30" height="30" /> Vani</p>
+                <div class="quantity-section">
+                    <label for="quantity">Số lượng:</label>                 
+                    <input type="number" id="quantity" value="1" min="1">                   
+                </div>
+                <p class="subtotal" id="subtotal">Tạm tính: 1.034.550đ</p>
+                <button>Mua ngay</button>
+                <button>Thêm vào giỏ</button>
+                <button>Mua trước trả sau</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    const price = 1034550;
+        function changeImage(element) {
+            const mainImage = document.getElementById("mainImage");
+            mainImage.src = element.src;
+        }
+
+        function updateSubtotal() {
+            const quantity = document.getElementById("quantity").value;
+            const subtotal = price * quantity;
+            document.getElementById("subtotal").innerText = `Tạm tính: ${subtotal.toLocaleString('vi-VN')}đ`;
+        }
+
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById("quantity");
+            if (quantityInput.value > 1) {
+                quantityInput.value--;
+                updateSubtotal();
+            }
+        }
+
+        function increaseQuantity() {
+            const quantityInput = document.getElementById("quantity");
+            quantityInput.value++;
+            updateSubtotal();
+        }
+
+        document.getElementById("quantity").addEventListener("input", updateSubtotal);</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

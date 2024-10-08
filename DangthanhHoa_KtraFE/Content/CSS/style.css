@@ -1,0 +1,241 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --text-color:#f1f1f1;
+}
+
+body {
+    font-family: Arial, sans-serif;    
+}
+p{
+    font-size:20px;
+}
+/*Header*/
+.Header {
+    display: flex;
+    width: 100%;
+    height: 160px;
+    padding:0px 30px;
+}
+
+.SC {
+    margin-block: 10px;
+    margin-left: 10px;
+    width: 300px;
+    height: 200px;
+    display: block;
+    flex:2;
+}
+
+    .SC .Search{
+        margin-top: 8px;
+        height: 50px;
+        font-size: 16px;
+    }     
+
+    .SC .SearchButtom {
+        margin-top: 15px;
+        width: 100px;
+        height: 55px;
+        color:#1549c4;
+        font-size:20px;
+    }
+    .SC div{
+        padding:10px;
+    }
+        .SC div a {
+            padding: 5px;
+            font-size: 20px;
+            color: #746d6d;
+        }
+
+.header-icons{
+    display:flex;
+    padding:20px 5px;
+}
+
+    .header-icons a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s ease;
+        padding: 40px;
+        font-size: 20px;
+    }
+
+        .header-icons a:hover {
+            color: #ff5c5c;
+        }
+
+        .header-icons i {
+            margin-right: 8px;
+        }
+/* Main Content */
+.container {
+    height:100%;
+    display: flex;
+    padding: 20px;
+    align-content: center;
+    background-color: var(--text-color);
+}
+
+/* Left Section */
+.left-section {
+    background-color: white;
+    flex: 2;
+    padding: 10px;
+    border: 10px solid var(--text-color);
+    width:35%;
+}
+
+.product-images {
+    display: flex;
+    flex-direction: column;
+    width:600px;
+    height:900px;
+}
+
+        #mainImage {
+            justify-content:center;
+            margin-top:30px;
+            margin-left:50px;
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            transition: opacity 0.5s ease;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .thumbnail {
+            width: 180px;
+            height: 150px;
+            margin:50px 0px;
+            margin-left:30px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border 0.3s ease;
+            padding:10px;
+        }
+
+            .thumbnail:hover {
+                border: 2px solid #ff5c5c;
+            }
+.middle-section {
+    flex: 2;
+    padding: 20px 10px;
+    background-color: var(--text-color);
+    margin-right: 20px;
+}
+
+    .middle-section div {
+        background-color: white;
+        border: 10px solid var(--text-color);
+    }
+
+.info-details {
+    width: auto;
+    min-height: 300px;
+    padding: 20px;
+}
+
+.middle-section h2 {
+    margin: 10px 0;
+}
+
+.middle-section h4 {
+    font-size: 26px;
+    color: red;
+}
+
+.info-details p {
+    margin-top: 30px;
+}
+
+.shipping-info {
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid var(--text-color);
+}
+
+    .shipping-info h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .shipping-info p {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #000000;
+    }
+
+    .shipping-info a {
+        text-decoration: none;
+        color: #000000;
+    }
+
+        .shipping-info a:hover {
+            text-decoration: underline;
+        }
+
+    .shipping-info ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .shipping-info li {
+        margin-bottom: 8px;
+        font-size: 20px;
+        padding: 5px;
+    }
+
+.shipping-option {
+    font-weight: bold;
+}
+
+/* Right Section */
+.right-section {
+    background-color: white;
+    flex: 1;
+    padding: 15px;
+    border-left: 1px solid var(--text-color);
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size:20px;
+}
+
+    .right-section p, .right-section h3 {
+        margin-bottom: 10px;
+    }
+
+.quantity-section {
+    margin-bottom: 20px;
+}
+
+    .quantity-section input {
+        text-align: center;
+        width: 50px;
+        padding: 10px;
+        margin: 0 10px;
+    }
+
+    .quantity-section button {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+
+.subtotal{
+    font-size: 22px;
+    color: red;
+}
+
+/* Footer */
+
